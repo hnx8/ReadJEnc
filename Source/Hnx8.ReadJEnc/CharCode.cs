@@ -15,7 +15,7 @@ namespace Hnx8.ReadJEnc
         //  http://opensource.org/licenses/mit-license.php
         ////////////////////////////////////////////////////////////////////////
 
-        //Unicode系文字コード
+        // Unicode系文字コード
 
         /// <summary>UTF8(BOMあり)</summary>
         public static readonly Text UTF8 = new Text("UTF-8", new UTF8Encoding(true, true)); //BOM : 0xEF, 0xBB, 0xBF
@@ -64,8 +64,8 @@ namespace Hnx8.ReadJEnc
         /// <summary>51932 euc-jp 日本語 (EUC) ※MS版</summary>
         public static readonly Text EUC = new Text("EUCJP", 51932);
 
-#if (!JPONLY) 
-        
+#if (!JPONLY)
+
         //漢字圏テキスト文字コード各種（日本語判別以外使用しないなら定義省略可）
 
         /// <summary>950 big5 繁体字中国語 (BIG5)</summary>
@@ -87,7 +87,7 @@ namespace Hnx8.ReadJEnc
 
 
         //ISO8859などのテキスト文字コード自動判別（日本語判別以外使用しないなら定義省略可）
-        
+
         /// <summary>Windows1250 中央ヨーロッパ言語(チェコ語等) iso-8859-2</summary>
         public static readonly Text CP1250 = new Text("CP1250", 1250);
         /// <summary>Windows1251 キリル言語(ロシア語等) </summary>

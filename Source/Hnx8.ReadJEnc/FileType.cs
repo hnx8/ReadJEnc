@@ -1,5 +1,4 @@
-﻿
-namespace Hnx8.ReadJEnc
+﻿namespace Hnx8.ReadJEnc
 {
     /// <summary>
     /// ReadJEnc ファイル種類定義(Rev.20170821)

@@ -1,6 +1,8 @@
 # ReadJEnc
 ReadJEnc C#(.NET)用ファイル文字コード種類自動判別ライブラリ
 
+[English version](./README.en.md)
+
 ## 概要
 C#(.NET Framework)向けテキストファイル文字コード自動判別＆読出ライブラリです。  
 自作のgrepツール（TresGrep/HNXgrep）の文字コード自動判別機能をC#のライブラリとして切り出したものです。
