@@ -1,4 +1,4 @@
-# ReadJEnc
+# Hnx8.ReadJEnc
 ReadJEnc C#(.NET) File Character Code Type Automatic Determination Library
 
 ## Overview
