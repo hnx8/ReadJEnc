@@ -1,7 +1,7 @@
 # ReadJEnc
 ReadJEnc C#(.NET) File Character Code Type Automatic Determination Library
 
-## 概要
+## Overview
 C#(.NET Framework) Text file for automatic character code character recognition & reading library. 
 
 This is a character code auto-identification function of my own grep tool (TresGrep / HNXgrep) cut out as a library of C #.
@@ -9,6 +9,7 @@ This is a character code auto-identification function of my own grep tool (TresG
 ## Where to get it
  * NuGet
 	* https://www.nuget.org/packages/ReadJEnc/
+	* Compatible: .Net 2.0/3.5/4.0/4.5/4.6/4.6.1, .Net Core 2.0, .Net Standard 2.0
  * Vector
 	* http://www.vector.co.jp/soft/winnt/util/se506899.html
 	* dll and the zip file containing the source code and action sample can be downloaded.
