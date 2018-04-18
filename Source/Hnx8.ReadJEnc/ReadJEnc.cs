@@ -26,7 +26,10 @@ namespace Hnx8.ReadJEnc
         [Description("欧文（西欧）")]
         public static readonly ReadJEnc ANSI = new ReadJEnc(CharCode.ANSI, null);
 
-#if (!JPONLY) //漢字圏文字コード判別対象言語（日本語判別以外使用しないなら定義省略可）
+        // En: Kanji zone character code discrimination target language (Definition can be omitted if 
+        // it is not used other than Japanese discrimination)
+        // Ja: 漢字圏文字コード判別対象言語（日本語判別以外使用しないなら定義省略可）
+#if (!JPONLY)
         /// <summary>繁体字中国語文字コード判別(BIG5/EUCTW)</summary>
         [Description("繁体字中国語")]
         public static readonly ReadJEnc TW = new BIG5TW();
@@ -147,7 +150,7 @@ namespace Hnx8.ReadJEnc
         /// <returns>文字コード判別結果（非テキストならnull）</returns>
         public CharCode GetEncoding(byte[] bytes, int len, out string text)
         {
-            if(len==0)
+            if (len == 0)
             {   //■空ファイルにつき非テキストと判断
                 text = null;
                 return null;
@@ -216,7 +219,7 @@ namespace Hnx8.ReadJEnc
             bool existsEUC0x8F = false; //EUC補助漢字を見つけたらtrueを設定
             uint NODEF = this.NODEF; //パフォーマンス改善のためローカル変数におろす
 
-            for (int cp1252Pos = asciiEndPos; cp1252Pos < len; ) //cp1252Posの加算はロジック途中で随時実施
+            for (int cp1252Pos = asciiEndPos; cp1252Pos < len;) //cp1252Posの加算はロジック途中で随時実施
             {
                 if (b1 == DEL)
                 {   //制御文字0x7F登場なら、ごくわずかなJISの可能性以外全消滅。JISの可能性を消しきれるか判定
@@ -508,16 +511,16 @@ namespace Hnx8.ReadJEnc
                                     return 2;
                             }
                             break;
-                        // 以下、MS版JIS(CP50220/CP50221/CP50222)でデコードできないエスケープシーケンスは、チェックしない。
-                        //    <ESC>&@<ESC>$B  : JISエスケープ(90JIS)   - (ISO-2022-JP規定外。90JISで追加された「凜・熙」の２文字は、CP5022xでは更新シーケンス「<ESC>&@」を付けなくてもデコード可能)
-                        //    <ESC>$(O : JISエスケープ(2000JIS#1)      - ISO-2022-JP-3
-                        //    <ESC>$(P : JISエスケープ(2000JIS#2)      - ISO-2022-JP-3
-                        //    <ESC>$(Q : JISエスケープ(2004JIS#1)      - ISO-2022-JP-4
-                        // ほか、多言語対応のエスケープシーケンスもチェック外とする。
-                        // エスケープシーケンスの一覧／うちMS版JISで有効なものは、
-                        // http://ja.wikipedia.org/wiki/ISO/IEC_2022#.E5.BF.9C.E7.94.A8.E4.BE.8B
-                        // http://referencesource.microsoft.com/#mscorlib/system/text/iso2022encoding.cs
-                        // http://www.wdic.org/w/WDIC/Microsoft%20Windows%20Codepage%20%3A%2050221 なども参照
+                            // 以下、MS版JIS(CP50220/CP50221/CP50222)でデコードできないエスケープシーケンスは、チェックしない。
+                            //    <ESC>&@<ESC>$B  : JISエスケープ(90JIS)   - (ISO-2022-JP規定外。90JISで追加された「凜・熙」の２文字は、CP5022xでは更新シーケンス「<ESC>&@」を付けなくてもデコード可能)
+                            //    <ESC>$(O : JISエスケープ(2000JIS#1)      - ISO-2022-JP-3
+                            //    <ESC>$(P : JISエスケープ(2000JIS#2)      - ISO-2022-JP-3
+                            //    <ESC>$(Q : JISエスケープ(2004JIS#1)      - ISO-2022-JP-4
+                            // ほか、多言語対応のエスケープシーケンスもチェック外とする。
+                            // エスケープシーケンスの一覧／うちMS版JISで有効なものは、
+                            // http://ja.wikipedia.org/wiki/ISO/IEC_2022#.E5.BF.9C.E7.94.A8.E4.BE.8B
+                            // http://referencesource.microsoft.com/#mscorlib/system/text/iso2022encoding.cs
+                            // http://www.wdic.org/w/WDIC/Microsoft%20Windows%20Codepage%20%3A%2050221 なども参照
                     }
                 }
                 c -= 4; //非JIS：ペナルティ的に評価値を減算する

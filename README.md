@@ -1,5 +1,7 @@
-# ReadJEnc
+# Hnx8.ReadJEnc
 ReadJEnc C#(.NET)用ファイル文字コード種類自動判別ライブラリ
+
+[English version](./README.en.md)
 
 ## 概要
 C#(.NET Framework)向けテキストファイル文字コード自動判別＆読出ライブラリです。  
@@ -9,6 +11,7 @@ C#(.NET Framework)向けテキストファイル文字コード自動判別＆�
  * NuGetから入手
 	* https://www.nuget.org/packages/ReadJEnc/
 	* NuGetパッケージとしてインストールできます。
+	* Compatible: .Net 2.0/3.5/4.0/4.5/4.6/4.6.1, .Net Core 2.0, .Net Standard 2.0
  * Vectorから入手
 	* http://www.vector.co.jp/soft/winnt/util/se506899.html
 	* dllおよびソースコード・動作サンプルを同梱したzipファイルをダウンロードできます。
