@@ -1,11 +1,10 @@
 ﻿================================================================================
 ==
 == ReadJEnc C#(.NET)用ファイル文字コード種類自動判別ライブラリ
-==   Ver 1.3.0.0821 (2017/08/21)
-==                  (2017/08/23、2017/9/15 Readme追記)
+==   Ver 1.3.1.0 (2018/04/19)
 ==
 ==  Vector         [ http://www.vector.co.jp/soft/winnt/util/se506899.html ]
-==  NuGet          [ https://www.nuget.org/packages/ReadJEnc/ ]
+==  NuGet          [ https://www.nuget.org/packages/Hnx8.ReadJEnc/ ]
 ==  GitHub(Source) [ https://github.com/hnx8/ReadJEnc ]
 ==
 ==   Copyright (C) 2014-2017 hnx8(H.Takahashi) 
@@ -26,9 +25,6 @@ C#(.NET Framework)向けテキストファイル文字コード自動判別＆�
 （ソースコード・サンプルアプリケーションは入っていません）
 
 ※自作grepソフト(TresGrep/HNXgrep)の文字コード判別処理をライブラリ化したものです。
-　実用的な文字コード一括調査／変換ツールをお探しであれば、
-　TresGrep/HNXgrepの検索モード「改行インデント走査」「ハッシュ一括算出」、
-　および「ファイル形式変換」機能をお試しください。
 　TresGrepは http://hp.vector.co.jp/authors/VA055804/TresGrep/ から入手できます。
 　HNXgrepは http://hp.vector.co.jp/authors/VA055804/HNXgrep/ から入手できます。
 
@@ -37,10 +33,7 @@ C#(.NET Framework)向けテキストファイル文字コード自動判別＆�
 
 (1)BOMあり/BOMなしUTF、ShiftJIS、EUC/JIS(補助漢字可)のほか、ANSI(CP1252)も判別
 　 非テキストファイル(バイナリファイル)の種類判別にも対応
-
- ※モード切替により、以下の言語のテキストファイル判別も可能
-   ・繁体字中国語・簡体字中国語・ハングル
-   ・CP1250～1258の各言語(東欧～中近東言語・ベトナム語)・タイ語  (Ver1.3.0以降)
+ ※モード切替により、日本語以外（欧米各国・中国語等）のテキストファイルも判別可
 
 (2)アプリケーションへの組み込みに適したコンパクトなライブラリ
  ・DLL版サイズ15KB（不要機能を割愛すればさらにコンパクト化）
@@ -100,7 +93,15 @@ C#(.NET Framework)向けテキストファイル文字コード自動判別＆�
 
 ＜対応.NET Frameworkバージョン＞
 
- .NET Framework 2.0以降
+ .NET Framework 2.0以降(2.0/3.5/4.0/4.5/4.6/4.6.1)
+ .Net Core 2.0, .Net Standard 2.0
+
+ ※.Net Core 1.X、.NET Framework 4.6.2以降 については、ビルドを通すために
+   現状のソースでは[Description]属性を除去する必要があります。
+ 
+ ※ソースコードはVisualStudio2017（もしくはVSCode）でビルドできます。
+ ※同梱している動作サンプルは.NET Framework 4.0以降の環境で動作します。
+ 
 
 ＜補足＞
 
@@ -300,6 +301,12 @@ BLOGの記事などで書き起こすかもしれません。
 
 
 【８】更新履歴
+
+■2018.04.19
+・ターゲットフレームワーク複数化(by Nordes Ménard-Lamarre さん)
+  ※2.0のみ⇒2.0/3.5/4.0/4.5/4.6/4.6.1、およびNetCore2.0、NetStandard2.0
+    サンプルプロジェクトは4.0環境で動作
+・NuGetギャラリーのURLを [ https://www.nuget.org/packages/Hnx8.ReadJEnc/ ]に更新
 
 □2017.09.15
 ・GitHub[ https://github.com/hnx8/ReadJEnc ]にも登録、
