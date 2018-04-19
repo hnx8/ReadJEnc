@@ -7,7 +7,7 @@
 ==  NuGet          [ https://www.nuget.org/packages/Hnx8.ReadJEnc/ ]
 ==  GitHub(Source) [ https://github.com/hnx8/ReadJEnc ]
 ==
-==   Copyright (C) 2014-2017 hnx8(H.Takahashi) 
+==   Copyright (C) 2014-2018 hnx8(H.Takahashi) 
 ==   Blog [ http://d.hatena.ne.jp/hnx8/ ]
 ==
 == Released under the MIT license
