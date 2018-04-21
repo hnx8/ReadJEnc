@@ -9,8 +9,8 @@ namespace Hnx8.ReadJEnc
     public class FileReader : IDisposable
     {   ////////////////////////////////////////////////////////////////////////
         // <FileReader.cs> ReadJEnc File読出＆文字コード自動判別(Rev.20170821)
-        //  Copyright (C) 2014-2017 hnx8(H.Takahashi)
-        //  http://hp.vector.co.jp/authors/VA055804/
+        //  Copyright (C) 2014-2018 hnx8(H.Takahashi)
+        //  https://github.com/hnx8/ReadJEnc
         //
         //  Released under the MIT license
         //  http://opensource.org/licenses/mit-license.php
@@ -30,11 +30,13 @@ namespace Hnx8.ReadJEnc
             Bytes = new byte[len];
         }
 
+        /// <summary>ファイル読み出し用のリソースを解放します。</summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+        /// <summary>ファイル読み出し用のリソースを解放します。</summary>
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)

@@ -1,16 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Hnx8.ReadJEnc
 {
     /// <summary>
-    /// ReadJEnc 文字コード自動判別ライブラリ・処理本体(Rev.20170821)
+    /// ReadJEnc 文字コード自動判別ライブラリ・処理本体(Rev.20180421)
     /// </summary>
     public class ReadJEnc
     {   ////////////////////////////////////////////////////////////////////////
-        // <ReadJEnc.cs> ReadJEnc 文字コード自動判別処理本体(Rev.20170821)
-        //  Copyright (C) 2014-2017 hnx8(H.Takahashi)
-        //  http://hp.vector.co.jp/authors/VA055804/
+        // <ReadJEnc.cs> ReadJEnc 文字コード自動判別処理本体(Rev.20180421)
+        //  Copyright (C) 2014-2018 hnx8(H.Takahashi)
+        //  https://github.com/hnx8/ReadJEnc
         //
         //  Released under the MIT license
         //  http://opensource.org/licenses/mit-license.php
@@ -19,11 +18,9 @@ namespace Hnx8.ReadJEnc
         //言語別文字コード自動判別オブジェクト==================================
 
         /// <summary>日本語文字コード判別(SJIS/EUCJP)</summary>
-        [Description("日本語")]
         public static readonly ReadJEnc JP = new SJIS();
 
         /// <summary>ANSI文字コード判別(CP1252)</summary>
-        [Description("欧文（西欧）")]
         public static readonly ReadJEnc ANSI = new ReadJEnc(CharCode.ANSI, null);
 
         // En: Kanji zone character code discrimination target language (Definition can be omitted if 
@@ -31,15 +28,12 @@ namespace Hnx8.ReadJEnc
         // Ja: 漢字圏文字コード判別対象言語（日本語判別以外使用しないなら定義省略可）
 #if (!JPONLY)
         /// <summary>繁体字中国語文字コード判別(BIG5/EUCTW)</summary>
-        [Description("繁体字中国語")]
         public static readonly ReadJEnc TW = new BIG5TW();
 
         /// <summary>簡体字中国語文字コード判別(GB18030)</summary>
-        [Description("簡体字中国語")]
         public static readonly ReadJEnc CN = new GB18030();
 
         /// <summary>ハングル文字コード判別(UHCKR)</summary>
-        [Description("ハングル")]
         public static readonly ReadJEnc KR = new UHCKR();
 #endif
 
@@ -60,39 +54,30 @@ namespace Hnx8.ReadJEnc
         // TIS620 (0x9#) 1111 1111 0000 0001  (0x8#) 1111 1111 1101 1110 ※OxA1以降を特別扱い、0xDB-DE/FC-FFは無効
 
         /// <summary>Windows1250(iso-8859-2) 中央ヨーロッパ言語(チェコ語等)判別 </summary>
-        [Description("中欧東欧言語")]
         public static readonly ReadJEnc CP1250 = new ReadJEnc(CharCode.CP1250, 0x0101010A);
 
         /// <summary>Windows1251 キリル言語(ロシア語等)＆ANSI判別 </summary>
-        [Description("キリル言語")]
         public static readonly ReadJEnc CP1251 = new SBCS(CharCode.CP1251, 0xC0, 0x01000000);
 
         /// <summary>Windows1253(iso-8859-7) ギリシャ語＆ANSI判別 </summary>
-        [Description("ギリシャ語")]
         public static readonly ReadJEnc CP1253 = new SBCS(CharCode.CP1253, 0xC1, 0xF501F502, 0x00000400, 0x00040000, 0x80000000);
 
         /// <summary>Windows1254(iso-8859-9) トルコ語判別 </summary>
-        [Description("トルコ語")]
         public static readonly ReadJEnc CP1254 = new ReadJEnc(CharCode.CP1254, 0x6001E002);
 
         /// <summary>Windows1255(iso-8859-8) ヘブライ語＆ANSI判別 </summary>
-        [Description("ヘブライ語")]
         public static readonly ReadJEnc CP1255 = new SBCS(CharCode.CP1255, 0xC0, 0xF401F402, 0x00000000, 0xFE000400, 0X98000000);
 
         /// <summary>Windows1256 アラビア語＆ANSI判別 </summary>
-        [Description("アラビア語")]
         public static readonly ReadJEnc CP1256 = new SBCS(CharCode.CP1256, 0xC0);
 
         /// <summary>Windows1257(iso-8859-13) バルト言語判別 </summary>
-        [Description("バルト言語")]
         public static readonly ReadJEnc CP1257 = new ReadJEnc(CharCode.CP1257, 0x9501150A);
 
         /// <summary>Windows1258 ベトナム語判別 </summary>
-        [Description("ベトナム語")]
         public static readonly ReadJEnc CP1258 = new ReadJEnc(CharCode.CP1258, 0x6401E402);
 
         /// <summary>TIS620/Windows874(iso-8859-11) タイ語＆ANSI判別 </summary>
-        [Description("タイ語")]
         public static readonly ReadJEnc TIS620 = new SBCS(CharCode.TIS620, 0xA1, 0xFF01FFDE, 0x00000000, 0x78000000, 0xF0000000);
 #endif
 
@@ -625,7 +610,7 @@ namespace Hnx8.ReadJEnc
         #endregion
 
         #region 各国語文字コード評価クラス--------------------------------------
-#if (!JPONLY) 
+#if (!JPONLY)
         //漢字圏テキスト文字コード各種（日本語判別以外使用しないなら定義省略可）
         /// <summary>
         /// BIG5TW評価クラス

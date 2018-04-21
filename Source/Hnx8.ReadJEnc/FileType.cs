@@ -6,8 +6,8 @@
     public class FileType : CharCode
     {   ////////////////////////////////////////////////////////////////////////
         // <FileType.cs> ReadJEnc ファイル種類定義(Rev.20170821)
-        //  Copyright (C) 2014-2017 hnx8(H.Takahashi)
-        //  http://hp.vector.co.jp/authors/VA055804/
+        //  Copyright (C) 2014-2018 hnx8(H.Takahashi)
+        //  https://github.com/hnx8/ReadJEnc
         //
         //  Released under the MIT license
         //  http://opensource.org/licenses/mit-license.php

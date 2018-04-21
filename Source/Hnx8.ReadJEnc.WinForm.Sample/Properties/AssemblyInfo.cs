@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ReadJEncSample")]
-[assembly: AssemblyCopyright("(C) 2014-2017 hnx8(H.Takahashi)")]
+[assembly: AssemblyCopyright("(C) 2014-2018 hnx8(H.Takahashi)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

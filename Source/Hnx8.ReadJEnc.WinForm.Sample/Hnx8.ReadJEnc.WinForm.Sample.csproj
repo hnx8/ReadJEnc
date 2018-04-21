@@ -21,7 +21,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -41,6 +41,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Hnx8.ReadJEnc\CharCode.cs">
+      <Link>ReadJEnc\CharCode.cs</Link>
+    </Compile>
+    <Compile Include="..\Hnx8.ReadJEnc\FileReader.cs">
+      <Link>ReadJEnc\FileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Hnx8.ReadJEnc\FileType.cs">
+      <Link>ReadJEnc\FileType.cs</Link>
+    </Compile>
+    <Compile Include="..\Hnx8.ReadJEnc\ReadJEnc.cs">
+      <Link>ReadJEnc\ReadJEnc.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleForm.cs">
       <SubType>Form</SubType>
@@ -58,15 +70,6 @@
     <EmbeddedResource Include="SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hnx8.ReadJEnc\Hnx8.ReadJEnc.csproj">
-      <Project>{38bf920b-3043-4dc8-a02e-8f279250b800}</Project>
-      <Name>Hnx8.ReadJEnc</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

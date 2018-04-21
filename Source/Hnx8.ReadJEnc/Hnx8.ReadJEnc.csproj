@@ -1,29 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.3.1.0</Version>
-    <FileVersion>1.3.1.0</FileVersion>
+    <Version>1.3.1.1</Version>
+    <FileVersion>1.3.1.1</FileVersion>
     <Authors>hnx8 (H.Takahashi)</Authors>
-    <Product>ReadJEnc</Product>
-    <Title>ReadJEnc - Character code automatic discrimination library</Title>
-    <Description>ReadJEnc C#(.NET) File Character Code Type Automatic Determination Library</Description>
+    <Product>ReadJEnc 文字エンコード自動判別ライブラリ</Product>
+    <Title>ReadJEnc - Character code automatic determination library(文字エンコード自動判別ライブラリ)</Title>
+    <Description>ReadJEnc C#(.NET) File Character Code Type Automatic Determination Library.
+日本語あるいは他言語のテキストファイル（またはbyte配列）の内容を解析し、文字エンコーディングを判定してテキスト内容を取り出すライブラリです。
+</Description>
     <Copyright>Copyright (C) 2014-2018 hnx8 (H.Takahashi)</Copyright>
   </PropertyGroup>
 
   <!-- nuspec details -->
   <PropertyGroup>
-    <PackageId>Hnx8.ReadJEnc</PackageId>
-    <PackageVersion>1.3.1.0</PackageVersion>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>ReadJEnc</PackageId>
+    <PackageVersion>1.3.1.1</PackageVersion>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>textfile encoding ja-encoding autodetect-encoding</PackageTags>
-    <PackageLicenseUrl>http://hp.vector.co.jp/authors/VA055804/HNXgrep/ReadJEnc_Readme.txt</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/hnx8/ReadJEnc/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/hnx8/ReadJEnc</PackageProjectUrl>
     <PackageIconUrl>https://www.nuget.org/Content/gallery/img/default-package-icon.svg</PackageIconUrl>
+    <PackageReleaseNotes>https://github.com/hnx8/ReadJEnc#readme
+English Version -&gt; https://github.com/hnx8/ReadJEnc/blob/master/README.en.md#readme</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;netstandard2.0;net20;net35;net40;net45;net46;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;netstandard2.0;netstandard1.3;net20;net35;net40;net45;net46;net47;</TargetFrameworks>
     <AssemblyName>Hnx8.ReadJEnc</AssemblyName>
     <RootNamespace>Hnx8.ReadJEnc</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DocumentationFile>bin\Release\netcoreapp2.0\Hnx8.ReadJEnc.xml</DocumentationFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
 </Project>
