@@ -5,11 +5,14 @@ ReadJEnc C#(.NET) File Character Code Type Automatic Determination Library
 C#(.NET Framework) Text file for automatic character code character recognition & reading library. 
 
 This is a character code auto-identification function of my own grep tool (TresGrep / HNXgrep) cut out as a library of C #.
+ * Compatible: .Net 2.0/3.5/4.0/4.5/4.6/4.7, .Net Core 2.0, .Net Standard 1.3/2.0
 
 ## Where to get it
  * NuGet
-	* https://www.nuget.org/packages/Hnx8.ReadJEnc/
-	* Compatible: .Net 2.0/3.5/4.0/4.5/4.6/4.6.1, .Net Core 2.0, .Net Standard 2.0
+	* https://www.nuget.org/packages/ReadJEnc/
+ * GitHub(Release)
+	* https://github.com/hnx8/ReadJEnc/releases
+	* download ReadJEnc_(yyyymmdd).zip 
  * Vector
 	* http://www.vector.co.jp/soft/winnt/util/se506899.html
 	* dll and the zip file containing the source code and action sample can be downloaded.
@@ -18,7 +21,7 @@ This is a character code auto-identification function of my own grep tool (TresG
  * https://github.com/hnx8/ReadJEnc/blob/master/ReadJEnc_Readme.txt
 
 ## Instructions
- * Readme or `ReadJEncSample` or `SampleForm.cs` (Code sample)
+ * Readme or `Hnx8.ReadJEnc.WinForm.Sample\SampleForm.cs` (Code sample)
  * In addition, a sample that judges the character code from the contents of the byte array is posted in the IT.
 	* @ IT "[. NET TIPS: How to estimate character encoding using ReadJEnc? (Japanese only)](http://www.atmarkit.co.jp/ait/articles/1501/20/news073.html)」 
 
@@ -36,6 +39,8 @@ The main part of the source code is briefly explained in the following blog arti
 ## Contact
 If you have any problems, doubts or impressions about this library, please give feedback to the appropriate articles of the author BLOG.
 * [hnx8 development room (author's BLOG) category "ReadJEnc" article list (Japanese only)](http://d.hatena.ne.jp/hnx8/archive?word=%2A%5BReadJEnc%5D)
+
+[Issues](https://github.com/hnx8/ReadJEnc/issues),[Pull requests](https://github.com/hnx8/ReadJEnc/pulls) will also accept contact.
 
 ## License
  - MIT License

@@ -6,21 +6,22 @@ ReadJEnc C#(.NET)用ファイル文字コード種類自動判別ライブラリ
 ## 概要
 C#(.NET Framework)向けテキストファイル文字コード自動判別＆読出ライブラリです。  
 自作のgrepツール（TresGrep/HNXgrep）の文字コード自動判別機能をC#のライブラリとして切り出したものです。
+ * 対応フレームワーク： .Net 2.0/3.5/4.0/4.5/4.6/4.7, .Net Core 2.0, .Net Standard 1.3/2.0
 
 ## DLL一式の入手方法
- * NuGetから入手
-	* https://www.nuget.org/packages/Hnx8.ReadJEnc/
-	* NuGetパッケージとしてインストールできます。
-	* Compatible: .Net 2.0/3.5/4.0/4.5/4.6/4.6.1, .Net Core 2.0, .Net Standard 2.0
+ * NuGetからインストール
+	* https://www.nuget.org/packages/ReadJEnc/
+ * GitHub(Release)から入手
+	* https://github.com/hnx8/ReadJEnc/releases
+	* ReadJEnc_(yyyymmdd).zip をダウンロードしてください。
  * Vectorから入手
 	* http://www.vector.co.jp/soft/winnt/util/se506899.html
-	* dllおよびソースコード・動作サンプルを同梱したzipファイルをダウンロードできます。
 
 ## Readme
  * https://github.com/hnx8/ReadJEnc/blob/master/ReadJEnc_Readme.txt
 
 ## 使用方法
- * Readme、あるいは、ReadJEncSampleのSampleForm.csを参照してください。
+ * Readme、あるいは、Hnx8.ReadJEnc.WinForm.SampleのSampleForm.csを参照してください。
  * ほか、バイト配列の内容から文字コードを判定するサンプルが@ITに掲載されています。
 	* @IT「[.NET TIPS：ReadJEncを使って文字エンコーディングを推定するには？](http://www.atmarkit.co.jp/ait/articles/1501/20/news073.html)」 
 
@@ -38,6 +39,8 @@ C#(.NET Framework)向けテキストファイル文字コード自動判別＆�
 ## 連絡先
 このライブラリに関する不具合・疑問点・感想などありましたら、作者BLOGの適当な記事へフィードバックをお寄せください。  
  * [hnx8 開発室(作者のBLOG) カテゴリ「ReadJEnc」の記事一覧 ](http://d.hatena.ne.jp/hnx8/archive?word=%2A%5BReadJEnc%5D)
+
+[Issues](https://github.com/hnx8/ReadJEnc/issues)、[Pull requests](https://github.com/hnx8/ReadJEnc/pulls)でも連絡を受け付けます。
 
 ## 謝辞
 [英語版README.md](./README.en.md)の作成、ならびにターゲットフレームワークの複数化対応は、[Nordes Ménard-Lamarre](https://github.com/Nordes)さんが行ってくださいました。
