@@ -13,9 +13,9 @@
         //  http://opensource.org/licenses/mit-license.php
         ////////////////////////////////////////////////////////////////////////
 
-        //※テキストファイルの定義は、CharCode.csを参照のこと
+        // ※テキストファイルの定義は、CharCode.csを参照のこと
 
-        //読込対象外ファイル
+        // 読込対象外ファイル
 
         /// <summary>読み込み失敗</summary>
         public static readonly FileType READERROR = new FileType("読込不能");
@@ -24,13 +24,13 @@
         /// <summary>巨大ファイル</summary>
         public static readonly FileType HUGEFILE = new FileType("巨大File");
 
-        //バイナリその他非テキストファイル
+        // バイナリその他非テキストファイル
 
         /// <summary>バイナリ</summary>
         public static readonly Bin BINARY = new Bin("$BINARY", null);
 
         /// <summary>Javaバイナリ</summary>
-        public static readonly Bin JAVABIN = new Bin(-65001, "$JavaBin", 0xCA, 0xFE, 0xBA, 0xBE); //内部文字コードはUTF8。HNXgrep用設定
+        public static readonly Bin JAVABIN = new Bin(-65001, "$JavaBin", 0xCA, 0xFE, 0xBA, 0xBE); // 内部文字コードはUTF8。HNXgrep用設定
         /// <summary>Windowsバイナリ</summary>
         public static readonly Bin WINBIN = new Bin("$WinExec", 0x4D, 0x5A);
         /// <summary>Windowsショートカット</summary>
@@ -52,7 +52,7 @@
         public static readonly Bin BZIP2 = new ZipBinary("$BZIP2", (byte)'B', (byte)'Z', (byte)'h');
         /// <summary>Z(compress)圧縮</summary>
         public static readonly Bin ZLZW = new ZipBinary("$Z-LZW", 0x1F, 0x9D);
-        //TAR/LHA(LZHファイル)については先頭バイトが不定であり判別対応しずらいため対応外とする。
+        // TAR/LHA(LZHファイル)については先頭バイトが不定であり判別対応しずらいため対応外とする。
 
         /// <summary>BMP画像</summary>
         public static readonly Image BMP = new Image("%BMP", (byte)'B', (byte)'M');
@@ -63,7 +63,7 @@
         /// <summary>PNG画像</summary>
         public static readonly Image PNG = new Image("%PNG", 0x89, (byte)'P', (byte)'N', (byte)'G', 0x0D, 0x0A, 0x1A, 0x0A);
         /// <summary>TIFF画像</summary>
-        public static readonly Image TIFF = new Image("%TIFF", 0x49, 0x49, 0x2A, 0x00); //IE9以降ならimgタグで表示可能
+        public static readonly Image TIFF = new Image("%TIFF", 0x49, 0x49, 0x2A, 0x00); // IE9以降ならimgタグで表示可能
         /// <summary>Windowsアイコン画像</summary><remarks>マジックナンバーのほか追加チェックあり</remarks>
         public static readonly Image IMGICON = new Image("%ICON", 0x00, 0x00, 0x01, 0x00);
 
@@ -78,14 +78,14 @@
         /// <param name="read">バイト配列先頭の読み込み済バイト数（LEASTREADSIZEのバイト数以上読み込んでおくこと）</param>
         /// <returns>バイナリファイル種類判定結果（どれにも該当しなければ一般バイナリと判定）</returns>
         public static CharCode GetBinaryType(byte[] bytes, int read)
-        {   //定義済みマジックナンバーすべてを対象に一致判定
+        {   // 定義済みマジックナンバーすべてを対象に一致判定
             CharCode ret = GetPreamble(bytes, read,
                 BMP, GIF, JPEG, PNG, TIFF, IMGICON,
                 JAVABIN, WINBIN, SHORTCUT, PDF,
                 ZIP, GZIP, SEVENZIP, RAR, CABINET, BZIP2, ZLZW);
-            //ファイル種類に応じた追加判定
-            if (ret == IMGICON && (read < 23 || bytes[4] == 0 || bytes[5] != 0)) { ret = null; } //ICONの誤判別防止用（アイコン個数チェック）            
-            //判定できたファイル種類を返す（どれにも該当しなければ一般バイナリと判定）
+            // ファイル種類に応じた追加判定
+            if (ret == IMGICON && (read < 23 || bytes[4] == 0 || bytes[5] != 0)) { ret = null; } // ICONの誤判別防止用（アイコン個数チェック）            
+            // 判定できたファイル種類を返す（どれにも該当しなければ一般バイナリと判定）
             return (ret != null ? ret : BINARY);
         }
 
