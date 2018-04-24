@@ -1,10 +1,10 @@
 ﻿================================================================================
 ==
 == ReadJEnc C#(.NET)用ファイル文字エンコード自動判別ライブラリ
-==   Ver 1.3.1.1 (2018/04/21)
+==   Ver 1.3.1.2 (2018/04/24)
 ==
 ==  GitHub         [ https://github.com/hnx8/ReadJEnc ]
-==  NuGet          [ https://www.nuget.org/packages/Hnx8.ReadJEnc/ ]
+==  NuGet          [ https://www.nuget.org/packages/ReadJEnc/ ]
 ==  Vector         [ http://www.vector.co.jp/soft/winnt/util/se506899.html ]
 ==
 ==   Copyright (C) 2014-2018 hnx8(H.Takahashi) 
@@ -28,7 +28,7 @@ C#(.NET Framework)向けテキストファイル文字エンコード自動判�
 
 (1)アプリケーションへの組み込みに適したコンパクトなライブラリ
  ・DLL版サイズ17KB、NuGetからのインストールも可能
- ・ソースコードはC#(.cs)４ファイルのみ、ソースコードを直接取り込んで使用してもOK
+ ・ソースコードはC#(.cs)4ファイルのみ、ソースコードを直接取り込んで使用してもOK
 
 (2)BOMあり/BOMなしUTF、ShiftJIS、EUC/JIS(補助漢字可)のほか、ANSI(CP1252)も判別
 　 非テキストファイル(バイナリファイル)の種類判別にも対応
@@ -90,13 +90,13 @@ C#(.NET Framework)向けテキストファイル文字エンコード自動判�
 ＜対応.NET Frameworkバージョン＞
 
  .NET Framework 2.0以降(2.0/3.5、4.0/4.5.x/4.6.x/4.7.x)
- .Net Core 2.0以降
- .Net Standard 1.3以降、2.0以降
+ .NET Core 1.0/1.1/2.0以降
+ .NET Standard 1.3以降、2.0以降
 
- ※DLLはVisualStudio2017（もしくはVSCode）でビルドできます。
+ ※ライブラリDLLの.csprojはVisualStudio2017でビルドできます。
    
  ※同梱している動作サンプルは.NET Framework 4.0以降の環境で動作します。
- 
+   動作サンプルexeの.csprojはVisualStudio2010以降の環境でビルド・実行できます。
 
 ＜補足＞
 
@@ -137,13 +137,13 @@ C#(.NET Framework)向けテキストファイル文字エンコード自動判�
 
 ◎テキストファイル読み出し・文字エンコード判別の基本的な手順ですが、
     1) FileReaderオブジェクトを生成
-    2) Read()メソッドを呼び出し、ファイル文字エンコードを把握
+    2) Read()メソッドを呼び出し、ファイルのエンコードを把握
     3) Textプロパティより、実際に読み出したテキストを取得
   という流れになります。
 
 	--ソースコード例--------------------------------------------------------
 	// 文字エンコードを判別したいファイルを、FileInfoオブジェクトなどで指定
-	void Test(System.IO.FileInfo file) 
+	void Example(System.IO.FileInfo file) 
 	{
 	    // ファイル自動判別読み出しクラスを生成
 	    using (Hnx8.ReadJEnc.FileReader reader = new FileReader(file))
@@ -251,8 +251,7 @@ zipファイルのSampleフォルダに入っている「Hnx8.ReadJEnc.WinForm.S
 
 【５】著作権・使用規定
 
-ReadJEnc、および同梱サンプルアプリケーション(ReadJEncSample)について、
-著作権は作者hnx8(H.Takahashi)が有しています。
+ReadJEncの著作権は、作者hnx8(H.Takahashi)が有しています。
 MITライセンス[ https://github.com/hnx8/ReadJEnc/blob/master/LICENSE ]です。
 ライセンスの範囲内であれば無償で自由にお使いいただけます。
 （要点は、利用・改造・再配布時に著作権表示を残す、無保証、の２点です）
@@ -301,14 +300,18 @@ MITライセンスの範囲を超えた使用（たとえば著作権表記を�
 
 【８】更新履歴
 
+■2018.04.24(Ver 1.3.1.2)
+・ターゲットフレームワークにNET Core1.0/1.1を追加し忘れていたので追加
+・ソースコードの整形、Readme等の記述改善
+
 ■2018.04.21(Ver 1.3.1.1)
-・ターゲットフレームワークにNetStandard1.3以降を追加
+・ターゲットフレームワークにNET Standard1.3以降を追加
 （この対応のため、ReadJEnc.csで使用していたDescriptionAttributeを抹消）
 ・Readme記述内容／ソースコード構成等を見直し最新化
 
 ■2018.04.17(Ver 1.3.1.0)
 ・ターゲットフレームワーク複数化(by Nordes Ménard-Lamarre さん)
-  ※2.0のみ⇒2.0/3.5/4.0/4.5/4.6/4.6.1、およびNetCore2.0、NetStandard2.0
+  ※2.0のみ⇒2.0/3.5/4.0/4.5/4.6/4.6.1、およびNET Core2.0、NET Standard2.0
     サンプルプロジェクトは4.0環境で動作
 
 
