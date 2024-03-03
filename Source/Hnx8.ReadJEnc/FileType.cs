@@ -37,7 +37,8 @@
         public static readonly Bin SHORTCUT = new Bin("$WinLnk", 0x4C, 0x00, 0x00, 0x00, 0x01, 0x14, 0x02, 0x00);
         /// <summary>PDF</summary>
         public static readonly Bin PDF = new Bin("%PDF", (byte)'%', (byte)'P', (byte)'D', (byte)'F', (byte)'-');
-
+        /// <summary>EPUB</summary>
+        public static readonly Bin EPUB = new ZipBinary("$EPUB", 0x50, 0x4B, 0x03, 0x04);
         /// <summary>Zip圧縮</summary>
         public static readonly Bin ZIP = new ZipBinary("$ZIP", 0x50, 0x4B, 0x03, 0x04);
         /// <summary>GZip圧縮</summary>
@@ -81,7 +82,7 @@
         {   // 定義済みマジックナンバーすべてを対象に一致判定
             CharCode ret = GetPreamble(bytes, read,
                 BMP, GIF, JPEG, PNG, TIFF, IMGICON,
-                JAVABIN, WINBIN, SHORTCUT, PDF,
+                JAVABIN, WINBIN, SHORTCUT, PDF, EPUB,
                 ZIP, GZIP, SEVENZIP, RAR, CABINET, BZIP2, ZLZW);
             // ファイル種類に応じた追加判定
             if (ret == IMGICON && (read < 23 || bytes[4] == 0 || bytes[5] != 0)) { ret = null; } // ICONの誤判別防止用（アイコン個数チェック）            
