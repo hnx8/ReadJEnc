@@ -80,6 +80,7 @@ C#(.NET Framework)向けテキストファイル文字エンコード自動判�
 　・画像ファイル(BMP/GIF/JPEG/PNG/TIFF/ICON)
 　・圧縮ファイル(ZIP/GZIP/7z/RAR/CAB/BZIP2/Z)
 　・PDFファイル
+　・EPUBファイル
 　・Javaバイナリ(classファイル)
 　・Windowsバイナリ(exe,dll等)
 　・Windowsショートカットファイル
